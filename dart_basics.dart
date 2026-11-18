@@ -14,6 +14,10 @@ void main() {
   print(initials('MUHAYEMARIYA Faustine'));
   print(initials(' ana uwase '));
   print(initials(' '));
+
+  drawTriangle(d + 3);
+  drawTriangle(0);
+  drawTriangle(-2);
 }
 int countVowels(String text){
   // by MF
@@ -47,4 +51,29 @@ String initials(String fullName) {
     i++;
   }
   return res;
+}
+
+void drawTriangle(int height) {
+  // by MF
+  if (height <= 0) {
+    return;
+  }
+  int row = 1;
+  while (row <= height) {
+    String line = '';
+    int spaces = height - row;
+    int s = 0;
+    while (s < spaces) {
+      line += ' ';
+      s++;
+    }
+    String ch = (row % 2 == 1) ? '*' : '#';
+    int c = 0;
+    while (c < row) {
+      line += ch;
+      c++;
+    }
+    print(line);
+    row++;
+  }
 }
