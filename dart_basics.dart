@@ -12,6 +12,7 @@ void main() {
   print('$fullname has ${res} vowels');
 }
 int countVowels(String text){
+  // by MF
   int count = 0;
   String vowels = 'aeiou';
   text = text.toLowerCase();
