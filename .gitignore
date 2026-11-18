@@ -1,0 +1,16 @@
+main.dart
+
+# Dart / Flutter build & tool artifacts
+.dart_tool/
+build/
+*.iml
+.packages
+.pub-cache/
+.pub/
+pubspec.lock
+
+# IDE / editor folders
+.idea/
+.vscode/
+*.swp
+*.swo
