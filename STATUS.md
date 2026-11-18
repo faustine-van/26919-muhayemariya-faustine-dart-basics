@@ -1,4 +1,4 @@
-# Status Check-in — 3:00
+# Status Check-in — 3:00 PM
 
 ## Done
 - Repository created and made public
