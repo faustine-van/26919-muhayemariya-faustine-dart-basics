@@ -18,6 +18,18 @@ void main() {
   drawTriangle(d + 3);
   drawTriangle(0);
   drawTriangle(-2);
+
+  print('--- receipts ---');
+  int totalFees = 0;
+  int i = 1;
+  while (i <= d + 3) {
+    int amount = i * 4000 + t * 100;
+    int fee = momoFee(amount);
+    totalFees += fee;
+    print('Receipt $i | $amount RWF | fee $fee RWF | to ${maskPhone('0788123456')}');
+    i++;
+  }
+  print('Total fees: $totalFees RWF');
 }
 int countVowels(String text){
   // by MF
@@ -76,4 +88,35 @@ void drawTriangle(int height) {
     print(line);
     row++;
   }
+}
+
+
+int momoFee(int amount) {
+  // by MF
+  if (amount <= 0) {
+    return -1;
+  } else if (amount <= 1000) {
+    return 20;
+  } else if (amount <= 10000) {
+    return 100;
+  } else if (amount <= 150000) {
+    return 250;
+  } else {
+    return 1500;
+  }
+}
+
+String maskPhone(String phone) {
+  // by MF
+  if (phone.length != 10) {
+    return 'INVALID';
+  }
+  String masked = phone.substring(0, 3);
+  int i = 3;
+  while (i < 8) {
+    masked += '*';
+    i++;
+  }
+  masked += phone.substring(8);
+  return masked;
 }
