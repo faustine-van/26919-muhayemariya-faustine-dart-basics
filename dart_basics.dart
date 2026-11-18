@@ -33,13 +33,15 @@ int countVowels(String text){
 
 String initials(String fullName) {
   // by MF
-  if (fullName.trim().isEmpty) {
+  String trimmed = fullName.trim();
+  if (trimmed.isEmpty) {
     return '';
   }
   String res = '';
-  List<String> parts = fullName.split(' ');
+  List<String> parts = trimmed.split(' ');
   int i = 0;
   while (i < parts.length) {
+    if (parts[i].isNotEmpty) {
       res += parts[i][0].toUpperCase() + '.';
     }
     i++;
