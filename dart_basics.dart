@@ -10,6 +10,10 @@ void main() {
   String fullname = 'MUHAYEMARIYA Faustine';
   int res = countVowels(fullname);
   print('$fullname has ${res} vowels');
+
+  print(initials('MUHAYEMARIYA Faustine'));
+  print(initials(' ana uwase '));
+  print(initials(' '));
 }
 int countVowels(String text){
   // by MF
@@ -25,4 +29,20 @@ int countVowels(String text){
     i++;
   }
   return count;
+}
+
+String initials(String fullName) {
+  // by MF
+  if (fullName.trim().isEmpty) {
+    return '';
+  }
+  String res = '';
+  List<String> parts = fullName.split(' ');
+  int i = 0;
+  while (i < parts.length) {
+      res += parts[i][0].toUpperCase() + '.';
+    }
+    i++;
+  }
+  return res;
 }
